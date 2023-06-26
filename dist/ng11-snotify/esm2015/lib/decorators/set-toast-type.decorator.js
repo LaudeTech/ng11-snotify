@@ -1,0 +1,16 @@
+/**
+ * Defines toast style depending on method name
+ * @param target any
+ * @param propertyKey SnotifyTypeType
+ * @param descriptor PropertyDescriptor
+ * @returns value: ((...args: any[]) => any)
+ */
+export function SetToastType(target, propertyKey, descriptor) {
+    return {
+        value(...args) {
+            args[0].config = Object.assign(Object.assign({}, args[0].config), { type: propertyKey });
+            return descriptor.value.apply(this, args);
+        }
+    };
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2V0LXRvYXN0LXR5cGUuZGVjb3JhdG9yLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vc3JjL2xpYi9kZWNvcmF0b3JzL3NldC10b2FzdC10eXBlLmRlY29yYXRvci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTs7Ozs7O0dBTUc7QUFDSCxNQUFNLFVBQVUsWUFBWSxDQUFDLE1BQVcsRUFBRSxXQUE0QixFQUFFLFVBQThCO0lBQ3BHLE9BQU87UUFDTCxLQUFLLENBQUMsR0FBRyxJQUFXO1lBQ2pCLElBQUksQ0FBQyxDQUFDLENBQWEsQ0FBQyxNQUFNLG1DQUNyQixJQUFJLENBQUMsQ0FBQyxDQUFhLENBQUMsTUFBTSxLQUM5QixJQUFJLEVBQUUsV0FBVyxHQUNsQixDQUFDO1lBQ0YsT0FBTyxVQUFVLENBQUMsS0FBSyxDQUFDLEtBQUssQ0FBQyxJQUFJLEVBQUUsSUFBSSxDQUFDLENBQUM7UUFDNUMsQ0FBQztLQUNGLENBQUM7QUFDSixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgU25vdGlmeVR5cGVUeXBlIH0gZnJvbSAnLi4vdHlwZXMvc25vdGlmeS10eXBlLnR5cGUnO1xuaW1wb3J0IHsgU25vdGlmeSB9IGZyb20gJy4uL2ludGVyZmFjZXMvc25vdGlmeS5pbnRlcmZhY2UnO1xuXG4vKipcbiAqIERlZmluZXMgdG9hc3Qgc3R5bGUgZGVwZW5kaW5nIG9uIG1ldGhvZCBuYW1lXG4gKiBAcGFyYW0gdGFyZ2V0IGFueVxuICogQHBhcmFtIHByb3BlcnR5S2V5IFNub3RpZnlUeXBlVHlwZVxuICogQHBhcmFtIGRlc2NyaXB0b3IgUHJvcGVydHlEZXNjcmlwdG9yXG4gKiBAcmV0dXJucyB2YWx1ZTogKCguLi5hcmdzOiBhbnlbXSkgPT4gYW55KVxuICovXG5leHBvcnQgZnVuY3Rpb24gU2V0VG9hc3RUeXBlKHRhcmdldDogYW55LCBwcm9wZXJ0eUtleTogU25vdGlmeVR5cGVUeXBlLCBkZXNjcmlwdG9yOiBQcm9wZXJ0eURlc2NyaXB0b3IpIHtcbiAgcmV0dXJuIHtcbiAgICB2YWx1ZSguLi5hcmdzOiBhbnlbXSkge1xuICAgICAgKGFyZ3NbMF0gYXMgU25vdGlmeSkuY29uZmlnID0ge1xuICAgICAgICAuLi4oYXJnc1swXSBhcyBTbm90aWZ5KS5jb25maWcsXG4gICAgICAgIHR5cGU6IHByb3BlcnR5S2V5XG4gICAgICB9O1xuICAgICAgcmV0dXJuIGRlc2NyaXB0b3IudmFsdWUuYXBwbHkodGhpcywgYXJncyk7XG4gICAgfVxuICB9O1xufVxuIl19
